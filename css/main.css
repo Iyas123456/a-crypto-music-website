@@ -720,6 +720,129 @@ body::-webkit-scrollbar-thumb {
     color: #25a56a;
   }
 }
+
+/*==============================
+	Product
+==============================*/
+.product {
+  position: relative;
+  margin-top: 20px;
+  border-radius: 12px;
+  width: 100%;
+  overflow: hidden;
+  background-color: #222227;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 20px;
+}
+.product__img {
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+}
+.product__img:before {
+  content: '';
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, #000 0%, rgba(0,0,0,0) 100%);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  z-index: 2;
+}
+.product__img img {
+  width: 100%;
+  display: block;
+  position: relative;
+  z-index: 1;
+}
+.product__img:hover:before {
+  opacity: 0.3;
+}
+.product__img:hover .product__add {
+  transform: scale(1);
+  opacity: 1;
+}
+.product__add {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 48px;
+  height: 48px;
+  top: 50%;
+  left: 50%;
+  margin: -24px 0 0 -24px;
+  border-radius: 12px;
+  background-color: #222227;
+  transform: scale(0.8);
+  opacity: 0;
+  transition: 0.5s ease;
+  transition-property: opacity, transform;
+  z-index: 3;
+  border: 1px solid rgba(255,255,255,0.05);
+}
+.product__add svg {
+  fill: #fff;
+  width: 24px;
+  height: auto;
+  transition: fill 0.5s ease;
+}
+.product__add:hover svg {
+  fill: #25a56a;
+}
+.product__title {
+  display: block;
+  width: 100%;
+  font-size: 17px;
+  font-weight: 400;
+  color: #fff;
+  margin-bottom: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  margin-top: 15px;
+}
+.product__title a {
+  color: #fff;
+}
+.product__title a:hover {
+  color: #25a56a;
+}
+.product__price {
+  font-size: 16px;
+  color: #c0c0c0;
+  margin-top: 5px;
+  display: block;
+  width: 100%;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+}
+.product__new {
+  font-size: 14px;
+  color: #eb5757;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  font-weight: 600;
+}
+@media (min-width: 768px) {
+  .product {
+    margin-top: 30px;
+  }
+}
+
+
 /*==============================
 	Sidebar
 ==============================*/
